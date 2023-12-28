@@ -1,11 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button, } from 'react-native';
 
 export default function App() {
+
+  const [value,setValue] = useState(0)
+  const onPress = () => {
+    setValue(value+1)
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>{value}</Text>
       <StatusBar style="auto" />
+      <Button
+      onPress={onPress}
+      title="Learn More"
+      color="#841584"
+      accessibilityLabel="Learn more about this purple button"
+/>
     </View>
   );
 }
