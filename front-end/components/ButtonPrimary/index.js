@@ -3,7 +3,7 @@ import styles from './styles'
 
 function ButtonPrimary(props){
     return(
-        <TouchableOpacity style={styles.container} onPress={props.onPress}>
+        <TouchableOpacity style={styles.container} {...props}>
             <Text style={styles.title}>
                 {props.title}
             </Text>

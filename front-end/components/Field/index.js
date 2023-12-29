@@ -5,7 +5,7 @@ function Field(props) {
     return(
         <View style={styles.container}>
             <Text style={styles.title}>{props.title}</Text>
-            <TextInput style={styles.input} inputMode={props.mode} onChange={props.onChange}/>
+            <TextInput style={styles.input} keyboardType={props.mode} onChangeText={props.onChange} value={props.value}/>
         </View>
     )
 }
