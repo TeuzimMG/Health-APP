@@ -11,13 +11,19 @@ export default function App() {
   const [imc,setIMC] = useState(0)
 
   const onChangePeso = (event) => {
-    setPeso(parseInt(event.target.value))
+    if (event.target.value !== ''){
+      setPeso(parseInt(event.target.value))
+    }
   }
   const onChangeAltura = (event) => {
-    setAltura(parseFloat(event.target.value))
+    if (event.target.value !== ''){
+      setAltura(parseFloat(event.target.value))
+    }
   }
   const onPress = () => {
-    setIMC(peso/altura)
+    if (peso != 0 && altura != 0){
+      setIMC(parseFloat((peso/altura).toFixed(2)))
+    }
     console.log(imc)
   }
 
@@ -34,7 +40,7 @@ export default function App() {
         <ButtonPrimary title={'CALCULAR'} onPress={onPress}/>
       </View>
       <View style={styles.container}>
-        {(imc != 0 ) ? (<Text>{imc}</Text>) : (<Text>Informe seu peso e altura</Text>)}
+      {(imc != 0 ) ? (<Text style={styles.result}>{imc}</Text>) : (<Text>Informe seu peso e altura</Text>)}
       </View>
     </SafeAreaView>
   );
@@ -53,6 +59,9 @@ const styles = StyleSheet.create({
     height:'100%',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  result:{
+    fontSize: 40,
   },
   content:{
     padding: 30,
