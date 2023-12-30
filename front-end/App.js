@@ -3,6 +3,7 @@ import { useState } from 'react';
 import PageIMC from './pages/PageIMC';
 import { StyleSheet, Text, View, Button, SafeAreaView, Platform, TextInput, } from 'react-native';
 import Field from './components/Field';
+import Routes from './routes';
 import ButtonPrimary from './components/ButtonPrimary';
 
 
@@ -23,6 +24,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.androidSafeArea}>
       <PageIMC/>
+      <Routes/>
     </SafeAreaView>
   );
 }

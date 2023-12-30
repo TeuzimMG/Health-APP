@@ -7,11 +7,7 @@ const Tab = createBottomTabNavigator();
 
 export default function TabRoutes(){
     return(
-        <Tab.Navigator>
-            <Tab.Screen
-                name="IMC"
-                component={PageIMC}
-            />
+        <Tab.Navigator screenOptions={{headerShown: false}}>
             <Tab.Screen
                 name="IMC"
                 component={PageIMC}
