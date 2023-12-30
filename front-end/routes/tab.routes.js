@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
+import { Feather } from '@expo/vector-icons'
 
 import PageIMC from "../pages/PageIMC";
 
@@ -11,6 +11,10 @@ export default function TabRoutes(){
             <Tab.Screen
                 name="IMC"
                 component={PageIMC}
+                options={{
+                    tabBarIcon: ({color, size}) => <Feather name='home' color={color} size={size}/>,
+                    tabBarLabel: 'IMC'
+                }}
             />
         </Tab.Navigator>
     )
